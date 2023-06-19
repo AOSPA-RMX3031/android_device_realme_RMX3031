@@ -421,7 +421,20 @@ PRODUCT_PACKAGES += \
     DozeOverlaySystem \
     DozeOverlaySystemUI \
     OplusDozeOverlay
+    android.hardware.secure_element@1.2.vendor:64
 
+# Sensors
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@2.0.vendor:64 \
+    libsensorndkbridge
+
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    packages/modules/Bluetooth/android/app \
+    hardware/google/interfaces \
+    hardware/google/pixel \
+    hardware/mediatek \
+    $(LOCAL_PATH)
 # Soundtrigger
 PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.3-impl \
