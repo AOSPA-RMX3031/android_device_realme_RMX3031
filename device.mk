@@ -16,6 +16,12 @@
 
 DEVICE_PATH := device/realme/RMX3031
 
+# GApps
+include vendor/gapps/arm64/arm64-vendor.mk
+
+# Excludes AudioFX
+TARGET_EXCLUDES_AUDIOFX := true
+
 # Installs gsi keys into ramdisk, to boot a GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
@@ -27,9 +33,7 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 # Call proprietary blob setup
 $(call inherit-product, vendor/realme/RMX3031/RMX3031-vendor.mk)
 $(call inherit-product, device/oplus/camera/camera.mk)
-$(call inherit-product-if-exists, packages/apps/prebuilt-apps/prebuilt-apps.mk)
 $(call inherit-product-if-exists, packages/apps/RealmeParts/parts.mk)
-$(call inherit-product-if-exists, packages/apps/PocketMode/pocket_mode.mk)
 
 # Vendor Log Tag
 include $(DEVICE_PATH)/configs/props/logtag.mk
@@ -143,10 +147,7 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.2.vendor \
     android.hardware.drm@1.3.vendor \
     android.hardware.drm@1.4.vendor \
-    libdrmclearkeyplugin.vendor \
     libmockdrmcryptoplugin \
-    libmockdrmcryptoplugin.vendor \
-    libclearkeycasplugin.vendor \
     libdrm.vendor \
     libdrm
 
