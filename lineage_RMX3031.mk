@@ -39,3 +39,7 @@ PRODUCT_GMS_CLIENTID_BASE := android-realme
 
 # Blur
 TARGET_ENABLE_BLUR := true
+
+# FOD
+TARGET_HAS_UDFPS := true
+EXTRA_UDFPS_ANIMATIONS := true
