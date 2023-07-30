@@ -16,9 +16,6 @@
 
 DEVICE_PATH := device/realme/RMX3031
 
-# GApps
-include vendor/gapps/arm64/arm64-vendor.mk
-
 # Excludes AudioFX
 TARGET_EXCLUDES_AUDIOFX := true
 
@@ -26,7 +23,7 @@ TARGET_EXCLUDES_AUDIOFX := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
 # Dalvik
-$(call inherit-product, frameworks/native/build/phone-xhdpi-12288-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 PRODUCT_SHIPPING_API_LEVEL := 30
 
