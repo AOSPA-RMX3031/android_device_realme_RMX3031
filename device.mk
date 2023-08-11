@@ -77,6 +77,8 @@ PRODUCT_PACKAGES += \
     libhapticgenerator \
     libstagefright_foundation
 
+TARGET_BOARD_PLATFORM := mt6893
+
 # Audio
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(DEVICE_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
